@@ -275,6 +275,7 @@ section {
 }
 .about-containers {
   gap: 2rem;
+  background: #efe6dd;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
