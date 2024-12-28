@@ -9,7 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f2e9e4; 
+  background-color: #ccd5ae; 
 }
 
 html {
@@ -275,7 +275,7 @@ section {
 }
 .about-containers {
   gap: 2rem;
-  background: #efe6dd;
+  background: #e9edc9;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
@@ -369,7 +369,7 @@ article .icon {
 
 .color-container {
   border-color: rgb(163, 163, 163);
-  background: #efe6dd;
+  background: #e9edc9;
 }
 
 .project-img {
@@ -448,7 +448,7 @@ footer p {
 }
 
 .tag {
-  background-color: #eeefee;
+  background-color: #fefae0;
   color: #3c594a;
   border-radius: 5px;
   padding: 5px 10px;
