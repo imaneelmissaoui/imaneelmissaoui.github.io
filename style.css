@@ -9,7 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #E0E7DE; 
+  background-color: #EDF1EC; 
 }
 
 html {
@@ -303,7 +303,7 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: #C0CABB;
+  background: #E9E7E6E3;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
@@ -367,7 +367,7 @@ article .icon {
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
+  border-color: rgb(0,0,0);
 }
 
 .project-img {
@@ -375,6 +375,7 @@ article .icon {
   width: 300px;
   height: 200px;
   object-fit: cover;
+  border: 1px solid black;
 
 }
 
