@@ -9,7 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #ccd5ae; 
+  background-color: #f0ebd8; 
 }
 
 html {
@@ -275,7 +275,7 @@ section {
 }
 .about-containers {
   gap: 2rem;
-  background: #e9edc9;
+  background: #748cab;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
@@ -304,7 +304,7 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: #efe6dd;
+  background: #FFFFFF;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
@@ -369,7 +369,7 @@ article .icon {
 
 .color-container {
   border-color: rgb(163, 163, 163);
-  background: #e9edc9;
+  background: #3e5c76;
 }
 
 .project-img {
