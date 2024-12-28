@@ -9,7 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f0ebd8; 
+  background-color: #E0E7DE; 
 }
 
 html {
@@ -275,7 +275,6 @@ section {
 }
 .about-containers {
   gap: 2rem;
-  background: #FFFFFF;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
@@ -304,7 +303,7 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: #FFFFFF;
+  background: #C0CABB;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
