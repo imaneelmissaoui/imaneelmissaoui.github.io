@@ -303,7 +303,7 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: #E9E7E6E3;
+  background: #D7DFD3E3;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
@@ -375,7 +375,7 @@ article .icon {
   width: 300px;
   height: 200px;
   object-fit: cover;
-  border: 1px solid black;
+  border: 1px solid gray;
 
 }
 
@@ -447,7 +447,7 @@ footer p {
 }
 
 .tag {
-  background-color: #fefae0;
+  background-color: #f9f8f4;
   color: #3c594a;
   border-radius: 5px;
   padding: 5px 10px;
