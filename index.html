@@ -1,463 +1,399 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-</head>
-<body>
-    <nav id="desktop-nav">
-        <div class="logo">
-           <a href="#home"><img src="./assets/logo.png" alt="Logo"></a>
-        </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
-        <div>Imane EL Missaoui</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
-    </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/profile_pic.png" alt="Imane el missaoui profilepicture" />
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I am</p>
-            <h1 class="title">Imane EL Missaoui</h1>
-            <p class="section__text__p2">Healthcare Data Engineer | Data Scientist</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/CV_Imane_EL_Missaoui.pdf')">Download CV</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/imane-el-missaoui/'">
-                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/imaneelmissaoui'">
-            </div>
-        </div>
-    </section>
-    <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="text-container">
-            Hello! I am a Healthcare Data Engineer | Data Scientist, looking for good opportunities to grow my career!
-        </div>
-        <div class="section-container">
-          <div class="about-details-container">
-            <div class="about-containers">
-              <div class="details-container">
-                <img
-                  src="./assets/experience.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <h3>Experience</h3>
-                <p>2+ years <br />Data science</p>
-              </div>
-              <div class="details-container">
-                <img
-                  src="./assets/education.png"
-                  alt="Education icon"
-                  class="icon"
-                />
-                <h3>Education</h3>
-                <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img
-          src="./assets/arrow.png"
-          alt="Arrow icon"
-          class="icon arrow"
-          onclick="location.href='./#experience'"
-        />
-      </section>
-      <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="section-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#103d3a" />
+    <meta
+      name="description"
+      content="Portfolio of Imane El Missaoui, Data Engineer and Data Analyst specialising in reliable data flows, analytics and healthcare data."
+    />
+    <meta property="og:title" content="Imane El Missaoui — Data Engineer & Data Analyst" />
+    <meta
+      property="og:description"
+      content="Reliable data flows, clear analytics and healthcare data made useful."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://imaneelmissaoui.github.io/" />
+    <title>Imane El Missaoui — Data Engineer & Data Analyst</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-          <div class="about-details-container">
-            <div class="about-containers">
-              <div class="details-container">
-                <h2 class="experience-sub-title">Skills</h2>
-                <div class="article-container">
-                  <article>
-                    <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                    />
-                    <div>
-                      <h3>Data management</h3>
-                      <p>Experienced</p>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                    />
-                    <div>
-                      <h3>Machine learning</h3>
-                      <p>Experienced</p>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                    />
-                    <div>
-                      <h3>Deep Learning</h3>
-                      <p>Experienced</p>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                    />
-                    <div>
-                      <h3>Data visualization</h3>
-                      <p>Experienced</p>
-                    </div>
-                  </article>  
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>Data engineering</h3>
-                    <p>Intermediate</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>Database management</h3>
-                    <p>Experienced</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="details-container">
-              <h2 class="experience-sub-title">Software</h2>
-              <div class="article-container">
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>PostgreSQL</h3>
-                    <p>Experienced</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>MongoDB</h3>
-                    <p>Intermediate</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>Python</h3>
-                    <p>Experienced</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>R</h3>
-                    <p>Experienced</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>Git</h3>
-                    <p>Experienced</p>
-                  </div>
-                </article>
-                <article>
-                    <img
-                      src="./assets/checkmark.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                  <div>
-                    <h3>Neo4J</h3>
-                    <p>Intermediate</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                 <div>
-                    <h3>AWS</h3>
-                    <p>Intermediate</p>
-                  </div>
-              </div>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Imane El Missaoui — home">
+        <img src="assets/logo.png" alt="" width="42" height="42" />
+        <strong>Imane El Missaoui</strong>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        aria-label="Open navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" aria-label="Main navigation">
+        <a href="#cases">Case files</a>
+        <a href="#lineage">Lineage</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a class="nav-cv" href="assets/Imane_El_Missaoui_CV.pdf" download>CV ↓</a>
+        <a class="nav-contact" href="#contact">Connect ↗</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero shell" id="top">
+        <div class="hero-meta">
+          <p>Based in Île-de-France</p>
+          <p>Available for CDI opportunities</p>
+        </div>
+
+        <div class="hero-main">
+          <div>
+            <p class="eyebrow">Data Engineer · Data Analyst</p>
+            <h1>
+              From raw data
+              <span>to human insight.</span>
+            </h1>
+          </div>
+
+          <div class="hero-note">
+            <span class="hand-note">My kind of work ↓</span>
+            <p>
+              I design reliable data flows and clear analytics—especially where
+              complex healthcare data needs to become useful evidence.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#cases">Trace my work <span aria-hidden="true">↗</span></a>
+              <a class="cv-action" href="assets/Imane_El_Missaoui_CV.pdf" download>
+                Download CV <span aria-hidden="true">↓</span>
+              </a>
+              <a class="text-action" href="#contact">Get in touch</a>
             </div>
           </div>
         </div>
+
+        <div class="transform-lab" aria-label="From raw input to useful output">
+          <div class="raw-signal" aria-hidden="true">
+            <i style="height: 18%"></i><i style="height: 42%"></i><i style="height: 25%"></i>
+            <i style="height: 68%"></i><i style="height: 31%"></i><i style="height: 54%"></i>
+            <i style="height: 22%"></i><i style="height: 76%"></i><i style="height: 46%"></i>
+            <i style="height: 35%"></i><i style="height: 62%"></i><i style="height: 29%"></i>
+            <span>RAW / 001101</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">
+            <span>clean</span><span>structure</span><span>connect</span>
+          </div>
+          <div class="human-output">
+            <div><strong>97.3%</strong><span>reliable result</span></div>
+            <p>Evidence someone can use.</p>
+          </div>
+        </div>
+
+        <div class="scroll-cue"><span>Scroll to follow the data</span><i></i></div>
+      </section>
+
+      <div class="journey">
+        <aside class="journey-rail" aria-hidden="true">
+          <span>RAW</span><i></i><span>USEFUL</span>
+        </aside>
+
+        <section class="cases section-pad shell" id="cases" data-reveal>
+          <div class="stage-label"><span>01</span><p>Models / selected case files</p></div>
+          <div class="section-intro">
+            <h2>Not project cards.<br /><em>Data stories.</em></h2>
+            <p>Each case is traced from its real source to the outcome it made possible.</p>
+          </div>
+
+          <div class="case-stack">
+            <article class="case-file sage" data-reveal>
+              <div class="case-top">
+                <span>CASE / 01</span>
+                <span>Making 10,000+ medical images traceable and analysis-ready.</span>
+                <span class="case-status">● documented</span>
+              </div>
+              <div class="case-title">
+                <h3>Endoscopic image pipeline</h3>
+                <div class="case-evidence">
+                  <div class="project-proof images" aria-label="Image batches and quality control">
+                    <span class="proof-kicker">Image batches / QC</span>
+                    <div class="image-batches" aria-hidden="true">
+                      <i></i><i></i><i></i><i></i><i></i><i></i>
+                      <i></i><i></i><i></i><i></i><i></i><i></i>
+                      <i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                  </div>
+                  <div class="case-metric"><strong>10K+</strong><span>images organised</span></div>
+                </div>
+              </div>
+              <div class="case-trace">
+                <div>
+                  <span>Source</span>
+                  <p>Capsule endoscopy images across separated dev, test and production environments.</p>
+                </div>
+                <div>
+                  <span>Challenge</span>
+                  <p>Turn a large, sensitive image collection into a dependable flow for experimentation and evaluation.</p>
+                </div>
+                <div class="pipeline-cell">
+                  <span>Pipeline</span>
+                  <ul>
+                    <li>MongoDB</li><li>Python</li><li>Airflow</li><li>Quality checks</li>
+                  </ul>
+                </div>
+                <div>
+                  <span>Result</span>
+                  <p>A structured dataset and reproducible workflow supporting 4-class evaluation with 97.3% test accuracy.</p>
+                </div>
+              </div>
+              <div class="case-footer">
+                <span>source → structure → evidence</span>
+                <a
+                  href="https://github.com/imaneelmissaoui/Endoscopic_Capsule_Embedded_AI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Trace the project <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="case-file coral" data-reveal>
+              <div class="case-top">
+                <span>CASE / 02</span>
+                <span>Turning high-frequency signals into indicators people can read.</span>
+                <span class="case-status">● documented</span>
+              </div>
+              <div class="case-title">
+                <h3>Physiological signal stream</h3>
+                <div class="case-evidence">
+                  <div class="project-proof signal" aria-label="Live signal at 500 hertz">
+                    <span class="proof-kicker">Live signal / 500 Hz</span>
+                    <div class="signal-proof" aria-hidden="true">
+                      <i style="height: 18%"></i><i style="height: 30%"></i><i style="height: 22%"></i>
+                      <i style="height: 42%"></i><i style="height: 16%"></i><i style="height: 64%"></i>
+                      <i style="height: 24%"></i><i style="height: 82%"></i><i style="height: 28%"></i>
+                      <i style="height: 48%"></i><i style="height: 20%"></i><i style="height: 70%"></i>
+                      <i style="height: 31%"></i><i style="height: 44%"></i><i style="height: 18%"></i>
+                      <i style="height: 55%"></i><i style="height: 26%"></i><i style="height: 35%"></i>
+                    </div>
+                  </div>
+                  <div class="case-metric"><strong>500 Hz</strong><span>live signal input</span></div>
+                </div>
+              </div>
+              <div class="case-trace">
+                <div>
+                  <span>Source</span>
+                  <p>Continuous 500 Hz PPG, ECG and temperature signals.</p>
+                </div>
+                <div>
+                  <span>Challenge</span>
+                  <p>Filter noise, calculate meaningful indicators and communicate them without hiding signal quality.</p>
+                </div>
+                <div class="pipeline-cell">
+                  <span>Pipeline</span>
+                  <ul>
+                    <li>Signal filtering</li><li>HeartPy</li><li>Airflow</li><li>Streamlit</li>
+                  </ul>
+                </div>
+                <div>
+                  <span>Result</span>
+                  <p>A real-time monitoring flow for heart rate, breathing rate and HRV with an interactive dashboard.</p>
+                </div>
+              </div>
+              <div class="case-footer">
+                <span>source → structure → evidence</span>
+                <span>Private work · details on request</span>
+              </div>
+            </article>
+
+            <article class="case-file blue" data-reveal>
+              <div class="case-top">
+                <span>CASE / 03</span>
+                <span>Preparing complex neuroimaging for reproducible research.</span>
+                <span class="case-status">● documented</span>
+              </div>
+              <div class="case-title">
+                <h3>MRI cohort analytics</h3>
+                <div class="case-evidence">
+                  <div class="project-proof mri" aria-label="Cohort of 3D MRI volumes">
+                    <span class="proof-kicker">Cohort / 3D volumes</span>
+                    <div class="mri-proof" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+                  </div>
+                  <div class="case-metric"><strong>2K+</strong><span>MRI scans prepared</span></div>
+                </div>
+              </div>
+              <div class="case-trace">
+                <div>
+                  <span>Source</span>
+                  <p>A cohort of more than 2,000 structural 3D MRI scans.</p>
+                </div>
+                <div>
+                  <span>Challenge</span>
+                  <p>Standardise imaging inputs and explore topological biomarkers for Parkinson’s stratification.</p>
+                </div>
+                <div class="pipeline-cell">
+                  <span>Pipeline</span>
+                  <ul>
+                    <li>3D MRI</li><li>Preprocessing</li><li>TDA</li><li>Cohort analysis</li>
+                  </ul>
+                </div>
+                <div>
+                  <span>Result</span>
+                  <p>A reproducible research workflow connecting imaging preparation to interpretable cohort analysis.</p>
+                </div>
+              </div>
+              <div class="case-footer">
+                <span>source → structure → evidence</span>
+                <a
+                  href="https://github.com/imaneelmissaoui/Internship-neurodatascience"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Trace the project <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="lineage section-pad shell" id="lineage" data-reveal>
+          <div class="stage-label"><span>02</span><p>Lineage / how I arrived here</p></div>
+          <div class="section-intro">
+            <h2>Every role added<br />a new layer.</h2>
+            <p>
+              My career is not a list of positions. It is a growing data lineage—from
+              scientific questions to reliable systems and decisions.
+            </p>
+          </div>
+
+          <div class="lineage-map">
+            <article data-reveal>
+              <div class="lineage-node"><span>01</span></div>
+              <div class="lineage-date">2025 — 2026</div>
+              <div class="lineage-copy">
+                <p>PET / CT · Multicentre</p>
+                <h3>Medical Imaging Data Scientist</h3>
+                <span>Built a reproducible radiomics workflow across DICOM, NIfTI, segmentation masks and feature tables for lymphoma research.</span>
+              </div>
+            </article>
+            <article data-reveal>
+              <div class="lineage-node"><span>02</span></div>
+              <div class="lineage-date">2023 — 2024</div>
+              <div class="lineage-copy">
+                <p>LIP6 · Sorbonne Université</p>
+                <h3>Data Scientist &amp; Imaging apprentice</h3>
+                <span>Worked across medical-image databases, automated data processing and real-time physiological monitoring.</span>
+              </div>
+            </article>
+            <article data-reveal>
+              <div class="lineage-node"><span>03</span></div>
+              <div class="lineage-date">2023</div>
+              <div class="lineage-copy">
+                <p>Lille Neuroscience &amp; Cognition</p>
+                <h3>Neurodata research intern</h3>
+                <span>Prepared and analysed a cohort of 2,000+ MRI scans for Parkinson’s disease stratification research.</span>
+              </div>
+            </article>
+            <article data-reveal>
+              <div class="lineage-node"><span>04</span></div>
+              <div class="lineage-date">Before data</div>
+              <div class="lineage-copy">
+                <p>Physics · Healthcare engineering</p>
+                <h3>The foundation</h3>
+                <span>A scientific path that shaped how I question sources, test assumptions and communicate evidence.</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="ecosystem section-pad" id="ecosystem" data-reveal>
+          <div class="shell">
+            <div class="stage-label"><span>03</span><p>System / tools in context</p></div>
+            <div class="section-intro">
+              <h2>A working ecosystem,<br />not a keyword cloud.</h2>
+              <p>I choose tools by the job they need to do, and connect them into a flow that stays understandable.</p>
+            </div>
+
+            <div class="ecosystem-flow">
+              <article data-reveal>
+                <p>01 · Ingest</p>
+                <ul><li>Python</li><li>SQL</li><li>DICOM</li><li>REST data</li><li>MongoDB</li></ul>
+                <span class="connector" aria-hidden="true">→</span>
+              </article>
+              <article data-reveal>
+                <p>02 · Orchestrate</p>
+                <ul><li>Airflow</li><li>Docker</li><li>Git</li><li>Linux</li><li>Quality checks</li></ul>
+                <span class="connector" aria-hidden="true">→</span>
+              </article>
+              <article data-reveal>
+                <p>03 · Transform</p>
+                <ul><li>PostgreSQL</li><li>Pandas</li><li>R</li><li>SimpleITK</li><li>PyRadiomics</li></ul>
+                <span class="connector" aria-hidden="true">→</span>
+              </article>
+              <article data-reveal>
+                <p>04 · Communicate</p>
+                <ul><li>Power BI</li><li>Streamlit</li><li>R Shiny</li><li>Statistics</li></ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="person section-pad shell" id="about" data-reveal>
+          <div class="stage-label"><span>04</span><p>Human / behind the pipeline</p></div>
+          <div class="person-grid">
+            <h2>Rigour from science.<br /><em>Curiosity for people.</em></h2>
+            <div>
+              <p class="lead">I care about the quiet work that makes data trustworthy—and the final mile that makes it understandable.</p>
+              <p>
+                My path started with physics, continued through healthcare engineering,
+                and became a specialisation in health data. I am now moving toward Data
+                Engineering and Data Analytics roles where I can make information more
+                reliable, accessible and useful.
+              </p>
+              <div class="degree">
+                <span>Education record</span>
+                <strong>Master’s in Data Science for Health</strong>
+                <p>ILIS · Université de Lille · 2024</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
-        <img
-          src="./assets/arrow.png"
-          alt="Arrow icon"
-          class="icon arrow"
-          onclick="location.href='./#projects'"
-        />
+      <section class="contact section-pad" id="contact" data-reveal>
+        <div class="shell contact-grid">
+          <div class="stage-label"><span>05</span><p>Output / let’s connect</p></div>
+          <h2>Have complex data?<br /><em>Let’s make it useful.</em></h2>
+          <div class="contact-copy">
+            <p>
+              Open to Data Engineer and Data Analyst opportunities in France,
+              with a particular interest in healthcare and meaningful data environments.
+            </p>
+            <a class="email" href="mailto:imaneelmissaoui23@gmail.com">
+              imaneelmissaoui23@gmail.com <span aria-hidden="true">↗</span>
+            </a>
+            <div>
+              <a href="https://www.linkedin.com/in/imane-el-missaoui/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+              <a href="https://github.com/imaneelmissaoui" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
       </section>
-      <section id="projects">
-  <p class="section__text__p1">Browse My Recent</p>
-  <h1 class="title">Projects</h1>
-  <div class="section-container">
-    <div class="about-details-container">
-      <div class="about-containers">
+    </main>
 
-        <!-- Project 1 -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img
-              src="./assets/project1.png"
-              alt="Project 1"
-              class="project-img"
-            />
-          </div>
-          <h2 class="experience-sub-title project-title">Knowledge Graphs | LLM</h2>
-          <div class="environment-tags">
-            <span class="tag">Neo4J</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">GenAI</span>
-            <span class="tag">Python</span>
-            <span class="tag">Beautiful Soup</span>
-            <span class="tag">Knowledge Graphs</span>
-          </div>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/imaneelmissaoui/Knowledgegraph_MaternalinflammationandASD/'"
-            >
-              Github
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img
-              src="./assets/project2.png"
-              alt="Project 2"
-              class="project-img"
-            />
-          </div>
-          <h2 class="experience-sub-title project-title">Topological Data Analysis</h2>
-          <div class="environment-tags">
-            <span class="tag">Neuroimaging</span>
-            <span class="tag">Python</span>
-            <span class="tag">Dipy</span>
-            <span class="tag">Jupyter Notebook</span>
-            <span class="tag">SVMs</span>
-            <span class="tag">Medical Images preprocessing</span>
-            <span class="tag">Shell scripting</span>
-          </div>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/imaneelmissaoui/Internship-neurodatascience'"
-            >
-              Github
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img
-              src="./assets/dashboard_screenshot.png"
-              alt="Project 3"
-              class="project-img"
-            />
-          </div>
-          <h2 class="experience-sub-title project-title">Healthcare analytics Dashboards</h2>
-          <div class="environment-tags">
-            <span class="tag">Data Visualization</span>
-            <span class="tag">PowerBI</span>
-            <span class="tag">Data Collection</span>
-              <span class="tag">Data Analytics</span>
-          </div>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/imaneelmissaoui/Dashboards/tree/main'"
-            >
-              Github
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img
-              src="./assets/website_ligapc_pic.png"
-              alt="Electrophysiology Dashboard"
-              class="project-img"
-            />
-          </div>
-          <h2 class="experience-sub-title project-title">Real time monitoring Dashboard</h2>
-          <div class="environment-tags">
-            <span class="tag">Streamlit</span>
-            <span class="tag">Python</span>
-            <span class="tag">Pipeline design</span>
-            <span class="tag">HeartPy</span>
-            <span class="tag">Signal processing</span>
-            <span class="tag">Jupyter Notebook</span>
-            <span class="tag">Plotly</span>
-            <span class="tag">Numpy</span>
-            <span class="tag">Pandas</span>
-          </div>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/imaneelmissaoui/Electrophysiology'"
-            >
-              Github
-            </button>
-          </div>
-        </div>
-
-    <!-- Project 5 -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img
-              src="./assets/capsule.jpg"
-              alt="Endoscopic capsule"
-              class="project-img"
-            />
-          </div>
-          <h2 class="experience-sub-title project-title">Embedded AI | Endoscopic Capsule </h2>
-          <div class="environment-tags">
-            <span class="tag">MongoDB</span>
-            <span class="tag">Python</span>
-            <span class="tag">Bash</span>
-            <span class="tag">Pytorch</span>
-            <span class="tag">Jupyter Notebook</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Hybrid Model</span>
-            <span class="tag">TinyML</span>
-          </div>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/imaneelmissaoui/MedicalImaging_DS_project'"
-            >
-              Github
-            </button>
-          </div>
-        </div>
+    <footer class="site-footer shell">
+      <div class="footer-signature">
+        <span class="footer-logo"><img src="assets/logo.png" alt="" width="34" height="34" /></span>
+        <span>Imane El Missaoui © 2026</span>
       </div>
-    </div>
-  </div>
-  <img
-    src="./assets/arrow.png"
-    alt="Arrow icon"
-    class="icon arrow"
-    onclick="location.href='./#contact'"
-  />
-</section>
-<section id="contact">
-  <p class="section__text__p1">Get in Touch</p>
-  <h1 class="title">Contact Me</h1>
-  <div class="contact-info-upper-container">
-    <div class="contact-info-container">
-      <img
-        src="./assets/email.png"
-        alt="Email icon"
-        class="icon contact-icon email-icon"
-      />
-      <p><a href="mailto:examplemail@gmail.com">imaneelmissaoui23@gmail.com</a></p>
-    </div>
-    <div class="contact-info-container">
-      <img
-        src="./assets/linkedin.png"
-        alt="LinkedIn icon"
-        class="icon contact-icon"
-      />
-      <p><a href="https://www.linkedin.com/in/imane-el-missaoui/">LinkedIn</a></p>
-    </div>
-  </div>
-</section>
-<footer>
-  <nav>
-    <div class="nav-links-container">
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <p>Copyright &#169; 2024 Imane EL Missaoui. All Rights Reserved.</p>
-</footer>
-<script src="script.js"></script>
-</body>
+      <span>Data Engineer · Data Analyst</span>
+      <a href="#top">Return to source ↑</a>
+    </footer>
+  </body>
 </html>
-
