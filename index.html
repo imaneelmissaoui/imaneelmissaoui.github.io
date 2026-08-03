@@ -259,6 +259,90 @@
                 >Trace the project <span aria-hidden="true">↗</span></a>
               </div>
             </article>
+
+                        <article class="case-file sage" data-reveal>
+              <div class="case-top">
+                <span>CASE / 04</span>
+                <span>Structuring public clinical-trial data into a reproducible healthcare pipeline.</span>
+                <span class="case-status">● in progress</span>
+              </div>
+            
+              <div class="case-title">
+                <h3>Oncology clinical trials pipeline</h3>
+            
+                <div class="case-evidence">
+                  <div
+                    class="project-proof pipeline"
+                    aria-label="ClinicalTrials.gov API to PostgreSQL Bronze pipeline"
+                  >
+                    <span class="proof-kicker">API / Bronze layer</span>
+            
+                    <div class="pipeline-proof" aria-hidden="true">
+                      <span>API</span>
+                      <i>→</i>
+                      <span>PY</span>
+                      <i>→</i>
+                      <span>DB</span>
+                    </div>
+                  </div>
+            
+                  <div class="case-metric">
+                    <strong>JSONB</strong>
+                    <span>raw clinical-trial storage</span>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="case-trace">
+                <div>
+                  <span>Source</span>
+                  <p>
+                    Public lymphoma and oncology study records retrieved from the
+                    ClinicalTrials.gov API v2.
+                  </p>
+                </div>
+            
+                <div>
+                  <span>Challenge</span>
+                  <p>
+                    Preserve deeply nested and variable healthcare data while preparing
+                    reliable structures for analysis.
+                  </p>
+                </div>
+            
+                <div class="pipeline-cell">
+                  <span>Pipeline</span>
+                  <ul>
+                    <li>Python</li>
+                    <li>REST API</li>
+                    <li>Docker</li>
+                    <li>PostgreSQL</li>
+                  </ul>
+                </div>
+            
+                <div>
+                  <span>Current result</span>
+                  <p>
+                    A documented source profile and Dockerized PostgreSQL Bronze layer
+                    designed to preserve complete trial records as JSONB.
+                  </p>
+                </div>
+              </div>
+            
+              <div class="case-footer">
+                <span>API → raw JSON → PostgreSQL Bronze</span>
+            
+                <a
+                  href="https://github.com/imaneelmissaoui/clinical-trials-oncology-pipeline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Trace the project <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            
           </div>
         </section>
 
