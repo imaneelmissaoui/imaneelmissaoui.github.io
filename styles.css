@@ -189,6 +189,35 @@ h1 span { color: var(--sage); display: block; font-style: italic; margin-left: c
 .mri-proof i:nth-child(2) { height: 2.8rem; opacity: .5; width: 2.3rem; }
 .mri-proof i:nth-child(3) { background: color-mix(in srgb, var(--coral) 35%, transparent); height: 1.4rem; width: 1.15rem; }
 .mri-proof span { background: var(--ink); height: 1px; opacity: .25; position: absolute; width: 100%; }
+
+.pipeline-proof {
+  align-items: center;
+  display: flex;
+  gap: 0.35rem;
+  height: 100%;
+  justify-content: center;
+}
+
+.pipeline-proof span {
+  align-items: center;
+  background: color-mix(in srgb, var(--ink) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  border-radius: 0.25rem;
+  display: flex;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.55rem;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.pipeline-proof i {
+  color: var(--coral);
+  font-family: "Geist Mono", monospace;
+  font-size: 0.7rem;
+  font-style: normal;
+}
+
 .case-trace { border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); }
 .case-trace > div { border-right: 1px solid var(--line); min-height: 9.75rem; padding: 1.2rem 1.4rem; }
 .case-trace > div:last-child { border: 0; }
