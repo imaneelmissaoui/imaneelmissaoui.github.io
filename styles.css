@@ -183,6 +183,11 @@ h1 span { color: var(--sage); display: block; font-style: italic; margin-left: c
 .image-batches i:nth-child(4n), .image-batches i:nth-child(7), .image-batches i:nth-child(11) { background: var(--coral); opacity: .75; }
 .signal-proof { align-items: center; display: flex; gap: .14rem; height: 100%; }
 .signal-proof i { background: var(--coral); display: block; flex: 1; opacity: .85; }
+.project-proof.access { background: var(--paper-2); }
+.access-mini-bars { align-items: end; display: flex; gap: .25rem; height: 100%; }
+.access-mini-bars i { background: var(--sage); display: block; flex: 1; height: var(--bar-height); }
+.access-mini-bars i:nth-child(3n) { background: var(--coral); }
+.access-mini-bars i:nth-child(2n) { opacity: .66; }
 .mri-proof { align-items: center; display: flex; height: 100%; justify-content: center; position: relative; }
 .mri-proof i { border: 1px solid var(--ink); border-radius: 50%; position: absolute; }
 .mri-proof i:nth-child(1) { height: 3.7rem; opacity: .3; width: 3.2rem; }

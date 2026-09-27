@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An interactive look at GP availability and specialist-care distances across French communes."
+    />
+    <meta name="theme-color" content="#103d3a" />
+    <title>Care Compass France · Imane El Missaoui</title>
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="assets/chart.umd.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar shell">
+      <a class="wordmark" href="https://imaneelmissaoui.github.io/">
+        <span class="mark" aria-hidden="true">CC</span>
+        <span>CARE COMPASS <small>FRANCE / CASE 05</small></span>
+      </a>
+      <a class="back-link" href="https://imaneelmissaoui.github.io/#cases">
+        <span aria-hidden="true">←</span> Portfolio case files
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">PUBLIC HEALTH DATA · INTERACTIVE BI</p>
+          <h1>Can people find care<br /><em>nearby and without extra fees?</em></h1>
+          <p class="hero-lede">
+            A commune-level view of estimated GP availability and distance to
+            specialist practices in France. Two signals, kept separate, so each
+            stays honest about what it measures.
+          </p>
+          <div class="tag-row" aria-label="Project tools">
+            <span>Python</span><span>SQL</span><span>DuckDB</span><span>JavaScript</span>
+          </div>
+        </div>
+        <aside class="finding-card" aria-labelledby="finding-title">
+          <p class="eyebrow" id="finding-title">A finding to investigate</p>
+          <div class="finding-number">29.5% <span>vs</span> 2.5%</div>
+          <p>
+            of the aligned population is in communes more than 30 km from a
+            <strong>no-fee urology site</strong>, compared with an
+            <strong>all-sector site</strong>.
+          </p>
+          <div class="compare-bars" aria-hidden="true">
+            <div><span style="width: 100%"></span></div>
+            <div><span style="width: 8.5%"></span></div>
+          </div>
+          <div class="bar-legend">
+            <span>Sector 1 / health centre</span>
+            <span>All conventional sectors</span>
+          </div>
+          <small>
+            Urology · 2022 commune population weights · straight-line distance
+            from each mairie
+          </small>
+        </aside>
+      </section>
+
+      <section class="source-ribbon shell" aria-label="Data snapshot">
+        <div><span class="ribbon-label">GP availability</span><strong>DREES APL · 2024</strong></div>
+        <div><span class="ribbon-label">Specialist distances</span><strong>Caresquad · 25 Sep 2026</strong></div>
+        <div><span class="ribbon-label">Joined coverage</span><strong>34,890 communes</strong></div>
+        <div><span class="ribbon-label">Personal health data</span><strong>None</strong></div>
+      </section>
+
+      <section class="dashboard shell" id="explore">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / EXPLORE</p>
+            <h2>Compare care access<br /><em>across territories.</em></h2>
+          </div>
+          <p>
+            Select a specialty, fee category and region. The charts use the
+            commune as the location unit and population weights for territorial
+            comparisons.
+          </p>
+        </div>
+
+        <div class="filter-panel" aria-label="Dashboard filters">
+          <label>
+            Region
+            <select id="region-filter">
+              <option value="all">All matched regions</option>
+            </select>
+          </label>
+          <label>
+            Specialty
+            <select id="specialty-filter">
+              <option value="Urologie">Urologie</option>
+            </select>
+          </label>
+          <label>
+            Fee category
+            <select id="fee-filter">
+              <option value="no_fee">Sector 1 / health centre</option>
+              <option value="optam">Sector 1 + OPTAM</option>
+              <option value="all_sectors">All conventional sectors</option>
+            </select>
+          </label>
+          <span id="filter-status" class="filter-status" aria-live="polite">Loading data…</span>
+        </div>
+
+        <div class="kpi-grid" aria-live="polite">
+          <article class="kpi-card">
+            <span class="kpi-label">GP APL · practitioners aged ≤65</span>
+            <strong id="kpi-apl">—</strong>
+            <span class="kpi-foot">Consultations, visits and teleconsultations per standardized resident / year</span>
+          </article>
+          <article class="kpi-card kpi-accent">
+            <span class="kpi-label">Selected specialty · over 30 km</span>
+            <strong id="kpi-distance-share">—</strong>
+            <span class="kpi-foot" id="kpi-distance-caption">Population in communes over 30 km from a listed site</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Any of 14 specialties · over 30 km</span>
+            <strong id="kpi-any-specialty">—</strong>
+            <span class="kpi-foot">Population in communes with at least one specialty beyond 30 km</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Matched communes</span>
+            <strong id="kpi-communes">—</strong>
+            <span class="kpi-foot" id="kpi-population">Across the selected area</span>
+          </article>
+        </div>
+
+        <div class="chart-grid">
+          <article class="chart-card chart-wide">
+            <div class="chart-heading">
+              <div><p class="eyebrow">DEPARTMENT COMPARISON</p><h3>Where do the two signals diverge?</h3></div>
+              <span class="chart-note">Each bubble is a department · size follows population</span>
+            </div>
+            <p class="chart-description">
+              Horizontal position: population-weighted GP APL for practitioners
+              aged 65 or younger. Vertical
+              position: population share in communes more than 30 km from the
+              selected specialty.
+            </p>
+            <div class="chart-wrap scatter-wrap"><canvas id="scatter-chart" aria-label="Department comparison between GP APL and specialist distance"></canvas></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-heading">
+              <div><p class="eyebrow">TERRITORIAL RANKING</p><h3>Highest distance shares</h3></div>
+            </div>
+            <p class="chart-description">Departments with the largest population share over 30 km for the selected specialty.</p>
+            <div class="chart-wrap rank-wrap"><canvas id="rank-chart" aria-label="Departments ranked by population share over 30 kilometres"></canvas></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-heading">
+              <div><p class="eyebrow">FEE-TIER COMPARISON</p><h3>How the category changes the distance</h3></div>
+            </div>
+            <p class="chart-description">Population share over 30 km from the selected specialty across the three published fee categories.</p>
+            <div class="chart-wrap tier-wrap"><canvas id="tier-chart" aria-label="Comparison of specialist distance shares by fee category"></canvas></div>
+          </article>
+        </div>
+
+        <article class="table-card" id="commune-explorer">
+          <div class="table-heading">
+            <div>
+              <p class="eyebrow">COMMUNE EXPLORER</p>
+              <h3>Start with a place you know.</h3>
+              <p class="chart-description">
+                GP APL is commune-level. The specialist count shows how many of
+                14 specialties are more than 30 km away under the selected fee
+                category.
+              </p>
+            </div>
+            <button id="load-communes" class="button" type="button">Load commune explorer</button>
+          </div>
+          <div class="table-tools">
+            <label class="search-field">
+              <span class="visually-hidden">Search by commune name or INSEE code</span>
+              <input id="commune-search" type="search" placeholder="Search a commune or INSEE code" autocomplete="off" disabled />
+            </label>
+            <span id="table-status" class="table-status" aria-live="polite">Commune details load only when you open this explorer.</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Commune</th>
+                  <th scope="col">Department</th>
+                  <th scope="col" class="numeric">Population</th>
+                  <th scope="col" class="numeric">GP APL · GPs ≤65</th>
+                  <th scope="col" class="numeric">Specialties &gt;30 km</th>
+                  <th scope="col">Road link</th>
+                </tr>
+              </thead>
+              <tbody id="commune-rows">
+                <tr><td colspan="6" class="empty-row">Open the explorer to load commune-level details.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <span id="result-count">—</span>
+            <button id="show-more" class="text-button" type="button" hidden>Show 25 more</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="method-band">
+        <div class="shell method-grid">
+          <div>
+            <p class="eyebrow">02 / METHOD</p>
+            <h2>Two measures.<br /><em>No blended score.</em></h2>
+            <p>
+              GP APL estimates local service availability after accounting for
+              nearby communes, practitioner activity and age-weighted need.
+              Specialist data measures straight-line distance from a mairie to
+              the nearest listed consulting site.
+            </p>
+          </div>
+          <div class="method-list">
+            <article><span>01</span><div><strong>Align on official commune codes</strong><p>Join on INSEE commune code. Keep codes as text; never match places by name alone.</p></div></article>
+            <article><span>02</span><div><strong>Respect the correct population weight</strong><p>Use standardized population for APL averages; use total 2022 population for distance shares.</p></div></article>
+            <article><span>03</span><div><strong>Check the publisher's summary</strong><p>Blank nearest-site distance counts as over 30 km. Recomputed commune counts match the published synthesis.</p></div></article>
+            <article><span>04</span><div><strong>Keep the fee categories separate</strong><p>Compare Sector 1 / health centre, Sector 1 + OPTAM, and all conventional sectors.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="limits shell" id="limitations">
+        <div class="section-heading">
+          <div><p class="eyebrow">03 / READ WITH CARE</p><h2>What these data<br /><em>cannot tell us.</em></h2></div>
+          <p>These are territorial indicators for exploring patterns, not a directory or a clinical decision tool.</p>
+        </div>
+        <div class="limit-grid">
+          <article><span>01</span><p>Distance is measured as the crow flies from the mairie; it is not a road journey or travel time.</p></article>
+          <article><span>02</span><p>The source does not state whether a practitioner accepts new patients or how soon an appointment is available.</p></article>
+          <article><span>03</span><p>Public-hospital outpatient specialist clinics are not represented in the specialist-distance measure.</p></article>
+          <article><span>04</span><p>Fee categories do not show an individual's bill or actual affordability; non-contracted doctors are excluded.</p></article>
+        </div>
+      </section>
+
+      <section class="sources-band">
+        <div class="shell sources-inner">
+          <div><p class="eyebrow">SOURCES & REUSE</p><h2>Public data, traceable methods.</h2></div>
+          <div class="source-links">
+            <a href="https://drees.solidarites-sante.gouv.fr/communique-de-presse-jeux-de-donnees/jeux-de-donnees/260722-accessibilite-aux-soins-de-premier-recours-en-2024" target="_blank" rel="noopener noreferrer">DREES · Access to primary care in 2024 ↗</a>
+            <a href="https://www.data.gouv.fr/datasets/acces-aux-specialistes-de-ville-sans-depassement-dhonoraires-par-commune" target="_blank" rel="noopener noreferrer">Caresquad · Specialist distances by commune ↗</a>
+            <a href="https://geo.api.gouv.fr/" target="_blank" rel="noopener noreferrer">French administrative geography API ↗</a>
+          </div>
+          <p class="source-credit">
+            DREES / OSAM / BPS. Caresquad, accès aux spécialistes de ville sans
+            dépassement d'honoraires, d'après l'annuaire santé de l'Assurance
+            Maladie. Source data reuse: Licence Ouverte / Open Licence 2.0.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="footer-mark" href="https://imaneelmissaoui.github.io/" aria-label="Imane El Missaoui portfolio">IM</a>
+        <p>Care Compass France · A public-data portfolio project by Imane El Missaoui</p>
+        <a href="https://imaneelmissaoui.github.io/#cases">Back to portfolio ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

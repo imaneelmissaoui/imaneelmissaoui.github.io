@@ -260,7 +260,7 @@
               </div>
             </article>
 
-                        <article class="case-file sage" data-reveal>
+            <article class="case-file sage" data-reveal>
               <div class="case-top">
                 <span>CASE / 04</span>
                 <span>Structuring public clinical-trial data into a reproducible healthcare pipeline.</span>
@@ -338,6 +338,68 @@
                   rel="noopener noreferrer"
                 >
                   Trace the project <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="case-file coral" data-reveal>
+              <div class="case-top">
+                <span>CASE / 05</span>
+                <span>Comparing GP availability with distance to specialist practices across France.</span>
+                <span class="case-status">● documented</span>
+              </div>
+
+              <div class="case-title">
+                <h3>Care Compass France</h3>
+                <div class="case-evidence">
+                  <div class="project-proof access" aria-label="Commune-level healthcare access dashboard">
+                    <span class="proof-kicker">France / access</span>
+                    <div class="access-mini-bars" aria-hidden="true">
+                      <i style="--bar-height: 34%"></i>
+                      <i style="--bar-height: 58%"></i>
+                      <i style="--bar-height: 43%"></i>
+                      <i style="--bar-height: 79%"></i>
+                      <i style="--bar-height: 52%"></i>
+                      <i style="--bar-height: 92%"></i>
+                      <i style="--bar-height: 66%"></i>
+                      <i style="--bar-height: 42%"></i>
+                    </div>
+                  </div>
+                  <div class="case-metric">
+                    <strong>34,890</strong>
+                    <span>communes aligned</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="case-trace">
+                <div>
+                  <span>Sources</span>
+                  <p>DREES GP APL for 2024 and Caresquad distance-to-specialist data, updated September 2026.</p>
+                </div>
+                <div>
+                  <span>Question</span>
+                  <p>Do local GP availability and distance to no-excess-fee specialist care tell the same story?</p>
+                </div>
+                <div class="pipeline-cell">
+                  <span>Pipeline</span>
+                  <ul>
+                    <li>Python</li>
+                    <li>DuckDB / SQL</li>
+                    <li>Data quality</li>
+                    <li>BI dashboard</li>
+                  </ul>
+                </div>
+                <div>
+                  <span>Finding</span>
+                  <p>For urology, 29.5% of the aligned population is in communes over 30 km from a no-fee site; 2.5% for any conventional sector.</p>
+                </div>
+              </div>
+
+              <div class="case-footer">
+                <span>DREES + Caresquad → exact INSEE join → documented access marts</span>
+                <a href="projects/care-compass/">
+                  Explore the dashboard <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </article>
