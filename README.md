@@ -10,7 +10,7 @@ The website is available at:
 - `styles.css` — visual design and responsive layout
 - `script.js` — mobile navigation and scroll reveals
 - `assets/` — logo, favicon, CV and local fonts
-- 
+
 
 ## Selected case files
 
