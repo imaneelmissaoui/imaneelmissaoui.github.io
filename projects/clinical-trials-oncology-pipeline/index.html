@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#103d3a" />
+    <meta name="description" content="An interactive view of public lymphoma clinical-trial records, built with a Python, PostgreSQL and dbt data pipeline." />
+    <meta property="og:title" content="Oncology Clinical Trials — Imane El Missaoui" />
+    <meta property="og:description" content="Explore a reproducible ClinicalTrials.gov data pipeline and its interactive dashboard." />
+    <meta property="og:image" content="https://imaneelmissaoui.github.io/projects/clinical-trials-oncology-pipeline/assets/dashboard-preview.png" />
+    <title>Oncology Clinical Trials — Imane El Missaoui</title>
+    <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="assets/chart.umd.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#dashboard">Skip to dashboard</a>
+
+    <header class="topbar shell">
+      <a class="wordmark" href="../../" aria-label="Back to Imane El Missaoui's portfolio">
+        <span class="mark" aria-hidden="true">IM</span>
+        <span>IMANE EL MISSAOUI<small>DATA · HEALTH · EVIDENCE</small></span>
+      </a>
+      <nav class="top-links" aria-label="Project links">
+        <a class="back-link" href="../../">← Portfolio</a>
+        <a class="repo-link" href="https://github.com/imaneelmissaoui/clinical-trials-oncology-pipeline" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+      </nav>
+    </header>
+
+    <main id="dashboard">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">CASE / 04 · DATA PIPELINE</p>
+          <h1>Lymphoma trials,<br /><em>made explorable.</em></h1>
+          <p class="hero-lede">
+            A reproducible flow from public ClinicalTrials.gov records to a tested
+            analytical model. Explore study status, phases, sponsors, locations
+            and imaging-related signals in the current snapshot.
+          </p>
+          <div class="tag-row" aria-label="Project technologies">
+            <span>Python</span><span>PostgreSQL</span><span>dbt</span><span>Docker</span><span>Metabase</span>
+          </div>
+        </div>
+        <aside class="finding-card" aria-label="Snapshot overview">
+          <p class="eyebrow">CURRENT SNAPSHOT</p>
+          <strong class="finding-number" id="snapshot-count">—</strong>
+          <p>unique lymphoma studies in this dashboard snapshot</p>
+          <div class="snapshot-meta">
+            <span>Generated</span><strong id="generated-at">Loading…</strong>
+            <span>Latest source update</span><strong id="latest-update">—</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="source-ribbon shell" aria-label="Data provenance">
+        <div><span class="ribbon-label">Public source</span><strong>ClinicalTrials.gov API v2</strong></div>
+        <div><span class="ribbon-label">Query</span><strong id="query-label">Condition: lymphoma</strong></div>
+        <div><span class="ribbon-label">Pipeline</span><strong>Bronze → Silver → Gold</strong></div>
+        <div><span class="ribbon-label">Scope</span><strong id="scope-label">Bounded record sample</strong></div>
+      </section>
+
+      <section class="dashboard shell" aria-labelledby="dashboard-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / EXPLORE THE DATA</p><h2 id="dashboard-title">What is in the registry?</h2></div>
+          <p>Use the filters to compare the records currently included in the snapshot. Each count describes registered study metadata, not patient-level outcomes.</p>
+        </div>
+
+        <div class="filter-panel">
+          <label>Status<select id="status-filter"><option value="all">All statuses</option></select></label>
+          <label>Phase<select id="phase-filter"><option value="all">All phases</option></select></label>
+          <label>Country<select id="country-filter"><option value="all">All countries</option></select></label>
+          <label class="search-label">Search<input id="search-filter" type="search" placeholder="Title, sponsor, condition…" autocomplete="off" /></label>
+          <p class="filter-status" id="filter-status" aria-live="polite">Loading the study snapshot…</p>
+        </div>
+
+        <div class="kpi-grid" aria-live="polite">
+          <article class="kpi-card kpi-accent"><span class="kpi-label">Studies shown</span><strong id="kpi-studies">—</strong><span class="kpi-foot">Current filter selection</span></article>
+          <article class="kpi-card"><span class="kpi-label">Recruiting</span><strong id="kpi-recruiting">—</strong><span class="kpi-foot">Status = Recruiting</span></article>
+          <article class="kpi-card"><span class="kpi-label">Countries represented</span><strong id="kpi-countries">—</strong><span class="kpi-foot">Among visible studies</span></article>
+          <article class="kpi-card"><span class="kpi-label">Imaging-related signal</span><strong id="kpi-imaging">—</strong><span class="kpi-foot">Keyword screening of public record text</span></article>
+        </div>
+
+        <div class="chart-grid">
+          <article class="chart-card">
+            <div class="chart-heading"><div><p class="eyebrow">RECRUITMENT</p><h3>Study status</h3></div><span class="chart-note">Current registry status</span></div>
+            <div class="chart-wrap doughnut-wrap"><canvas id="status-chart" aria-label="Study counts by status"></canvas></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-heading"><div><p class="eyebrow">STUDY DESIGN</p><h3>Phase distribution</h3></div><span class="chart-note">Phase is not reported for every study type</span></div>
+            <div class="chart-wrap phase-wrap"><canvas id="phase-chart" aria-label="Study counts by phase"></canvas></div>
+          </article>
+          <article class="chart-card chart-wide">
+            <div class="chart-heading"><div><p class="eyebrow">GEOGRAPHY</p><h3>Countries with the most studies</h3></div><span class="chart-note">A study may be registered in more than one country</span></div>
+            <div class="chart-wrap country-wrap"><canvas id="country-chart" aria-label="Top countries by number of studies"></canvas></div>
+          </article>
+          <article class="chart-card chart-wide">
+            <div class="chart-heading"><div><p class="eyebrow">REGISTRY ACTIVITY</p><h3>First posted by year</h3></div><span class="chart-note">Counts reflect records in this sample</span></div>
+            <div class="chart-wrap year-wrap"><canvas id="year-chart" aria-label="Study counts by first-posted year"></canvas></div>
+          </article>
+        </div>
+
+        <article class="table-card" id="study-explorer">
+          <div class="table-heading">
+            <div><p class="eyebrow">STUDY EXPLORER</p><h3>Browse registered studies.</h3><p class="chart-description">Open the source record for its full protocol, history and contact details.</p></div>
+            <span class="table-status" id="table-status" aria-live="polite">Loading…</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Study</th><th scope="col">Status</th><th scope="col">Phase</th><th scope="col">Sponsor</th><th scope="col">Countries</th><th scope="col">Last update</th><th scope="col">Imaging signal</th></tr></thead>
+              <tbody id="study-rows"><tr><td colspan="7" class="empty-row">Loading study records…</td></tr></tbody>
+            </table>
+          </div>
+          <div class="table-footer"><span id="result-count">—</span><button id="show-more" class="text-button" type="button" hidden>Show 25 more</button></div>
+        </article>
+      </section>
+
+      <section class="method-band">
+        <div class="shell method-grid">
+          <div><p class="eyebrow">02 / METHOD</p><h2>Traceable data.<br /><em>Clear limits.</em></h2><p>The pipeline preserves each source payload in Bronze, standardizes current study attributes in Silver, and builds tested fact, dimension and bridge tables in Gold.</p></div>
+          <div class="method-list">
+            <article><span>01</span><div><strong>Keep source records intact</strong><p>Store the complete JSON response as JSONB with a run ID and source update date.</p></div></article>
+            <article><span>02</span><div><strong>Model the record grain</strong><p>Use one latest study row per NCT ID; explode multi-valued conditions, interventions and countries into bridge tables.</p></div></article>
+            <article><span>03</span><div><strong>Validate before reporting</strong><p>Run dbt uniqueness, not-null, relationship and metric checks before exporting Gold data.</p></div></article>
+            <article><span>04</span><div><strong>Read imaging mentions carefully</strong><p>Imaging indicators are keyword signals found in public text; they do not classify a trial's clinical purpose.</p></div></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>Project by Imane El Missaoui · Public study records from ClinicalTrials.gov</p>
+      <div><a href="https://clinicaltrials.gov/" target="_blank" rel="noopener noreferrer">Source ↗</a><a href="https://github.com/imaneelmissaoui/clinical-trials-oncology-pipeline" target="_blank" rel="noopener noreferrer">Pipeline repository ↗</a><a href="../../">Portfolio home ↗</a></div>
+    </footer>
+  </body>
+</html>
