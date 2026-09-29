@@ -264,7 +264,7 @@
               <div class="case-top">
                 <span>CASE / 04</span>
                 <span>Structuring public clinical-trial data into a reproducible healthcare pipeline.</span>
-                <span class="case-status">● in progress</span>
+                <span class="case-status">● live</span>
               </div>
             
               <div class="case-title">
@@ -287,8 +287,8 @@
                   </div>
             
                   <div class="case-metric">
-                    <strong>JSONB</strong>
-                    <span>raw clinical-trial storage</span>
+                    <strong>1,000</strong>
+                    <span>studies in the public snapshot</span>
                   </div>
                 </div>
               </div>
@@ -321,24 +321,20 @@
                 </div>
             
                 <div>
-                  <span>Current result</span>
+                  <span>Result</span>
                   <p>
-                    A documented source profile and Dockerized PostgreSQL Bronze layer
-                    designed to preserve complete trial records as JSONB.
+                    Paginated API ingestion, traceable PostgreSQL snapshots, a dbt Silver
+                    and Gold warehouse with data-quality tests, and an interactive dashboard.
                   </p>
                 </div>
               </div>
             
               <div class="case-footer">
-                <span>API → raw JSON → PostgreSQL Bronze</span>
-            
-                <a
-                  href="https://github.com/imaneelmissaoui/clinical-trials-oncology-pipeline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Trace the project <span aria-hidden="true">↗</span>
-                </a>
+                <span>API → Bronze → Silver → Gold → insight</span>
+                <span class="case-links">
+                  <a href="projects/clinical-trials-oncology-pipeline/">Explore dashboard <span aria-hidden="true">↗</span></a>
+                  <a href="https://github.com/imaneelmissaoui/clinical-trials-oncology-pipeline" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+                </span>
               </div>
             </article>
 

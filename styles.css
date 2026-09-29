@@ -233,6 +233,7 @@ h1 span { color: var(--sage); display: block; font-style: italic; margin-left: c
 .case-footer { align-items: center; background: var(--ink); color: var(--paper-2); display: flex; font-size: .7rem; justify-content: space-between; padding: 1rem 1.4rem; }
 .case-footer > span:first-child { font-family: monospace; opacity: .6; }
 .case-footer a { font-weight: 700; }
+.case-footer .case-links { align-items: center; display: flex; gap: 1.2rem; }
 
 .lineage { background: var(--paper); }
 .lineage-map { margin-left: clamp(0rem, 15vw, 13rem); }
